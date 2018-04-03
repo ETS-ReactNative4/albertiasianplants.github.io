@@ -1,10 +1,19 @@
 :root {
-  --window-height: 320px;
-  --content-width: 940px;
+    --window-height: 320px;
+    --content-width: 940px;
+    --light-shade: #F7F9F8;
+    --light-accent: #84A29B;
+    --brand: #7DB952;
+    --dark-accent: #B6475E;
+    --dark-shades: #272138;
+    --header-color: #242335;
+    --text-color: #0D0915;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--light-shade);
+    font-family: sans-serif;
 }

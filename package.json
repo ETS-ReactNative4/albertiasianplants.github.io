@@ -18,5 +18,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://solidfox.github.io/alberti-asian-plants-web"
+  "homepage": "https://solidfox.github.io/alberti-website"
 }

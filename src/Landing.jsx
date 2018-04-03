@@ -20,7 +20,7 @@ export default function Landing() {
       {/*<Menu />*/}
     </header>
 
-    <Parallax bgImage={heroBackground} className='hero full-width' style={{width: '100%'}}>
+    <Parallax bgImage={heroBackground} strength={200} className='hero full-width'>
       <h1>
         60 years of experience in the flower and plant trade
       </h1>

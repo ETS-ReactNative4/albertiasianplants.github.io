@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gh-pages": "^1.1.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-parallax": "^1.6.1",
-    "react-scripts": "1.1.1",
+    "react-router-dom": "^4.2.2",
+    "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.79.0"
   },
   "scripts": {
@@ -18,5 +18,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://solidfox.github.io/alberti-website"
+  "homepage": "https://solidfox.github.io/alberti-website",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "gh-pages": "^1.1.0",
+    "prop-types": "^15.6.1",
+    "react-scripts": "1.1.1"
+  }
 }

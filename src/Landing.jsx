@@ -2,7 +2,7 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import heroBackground from './bamboo.jpg';
 import './Landing.css';
-import logo from './wide logo bw.svg';
+import Header from "./Header";
 
 function Story({children}) {
   return children;
@@ -10,20 +10,22 @@ function Story({children}) {
 
 export default function Landing() {
   return <section className="page">
+    
+    <Header/>
 
-    <header>
-      <img
-          style={{
-            width:'30%',
-            margin: '1rem 0'
-          }} src={logo} alt='Alberti Asian Plants Bamboo Shoot Logo'/>
-      {/*<Menu />*/}
-    </header>
-
-    <Parallax bgImage={heroBackground} strength={200} className='hero full-width'>
-      <h1>
-        60 years of experience in the flower and plant trade
-      </h1>
+    <Parallax bgImage={heroBackground} strength={200} className="full-width">
+      <div className='hero full-width'
+           style={{
+        background: "rgba(0,0,0,0.5)"
+        
+      }}>
+        <h1>
+          60 years of experience in the flower and plant trade
+        </h1>
+        <p>
+          We provide personal service for individuals and companies looking to buy Asian plants in bulk. Throw us an email and we will get back to you within 24 hours.
+        </p>
+      </div>
     </Parallax>
 
     <Story>
@@ -34,7 +36,7 @@ export default function Landing() {
       </p>
 
       <p>
-        This time I am not alone. My son Thomas is joining me and I am so pleased. Thomas is a reliable, positive and structured person so he will be well prepared for this tricky business. I will teach him all I know before age catches up with me. I have worked with Thomas before and seen that he already has a solid plant nursery education. Together we have more than 60 years of experience in the plant and flower trade.
+        This time I am not alone — I am very pleased to have my son Thomas joining me. Thomas is a reliable, positive and structured person so he will be well prepared for this tricky business. I will teach him all I know before age catches up with me. I have worked with Thomas before and seen that he already has a solid plant nursery education. Together we have more than 60 years of experience in the plant and flower trade.
       </p>
 
       <p>

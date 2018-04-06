@@ -21,7 +21,7 @@ export default function Landing() {
               strength={200}
               style={{width: '100%'}}>
       <div style={{
-        background: 'rgba(0,0,0,0.5)',
+        background: 'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.2)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

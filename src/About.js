@@ -4,7 +4,7 @@ import Header from './Header';
 const About = () =>
   <div style={{
     margin: 'auto',
-    width: 'var(--page-width)',
+    maxWidth: 'var(--page-width)',
   }}>
     <Header />
     <h2>Back in action!</h2>

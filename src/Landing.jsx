@@ -30,7 +30,8 @@ export default function Landing() {
       }}>
         <div className='hero'
              style={{
-               width: 'var(--page-width)',
+               width: '100%',
+               maxWidth: 'var(--page-width)',
                position: 'relative',
                display: 'flex',
                alignItems: 'center',
@@ -43,15 +44,15 @@ export default function Landing() {
 
     <div style={{
       padding: '2em 0',
-      width: 'var(--page-width)',
+      maxWidth: 'var(--page-width)',
     }}>
       <h1>
         Over 60 years of experience in the flower and plant trade
       </h1>
       <p style={{width: '60%'}}>
-        We provide personal service for individuals and companies
+        We provide personal service to individuals and companies
         looking to buy asian plants in bulk. Throw us an email
-        and we will get back to you within 24 hours.
+        and we will get back to you within 48 hours.
       </p>
       <Button>Get in touch</Button>
     </div>

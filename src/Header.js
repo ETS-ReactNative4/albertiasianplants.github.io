@@ -7,11 +7,13 @@ import {Menu} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
+import {contentWidthRem} from './Styles';
 
 export default function Header({width, inverted, hideLogo, floating}) {
   return <header style={
     {
-      width: width || 'var(--page-width)',
+      width: 'auto',
+      maxWidth: contentWidthRem + 'rem',
       display: 'flex',
       flexDirection: 'row',
       flexAlign: 'center',
@@ -31,7 +33,7 @@ export default function Header({width, inverted, hideLogo, floating}) {
          alt='Alberti Asian Plants Bamboo Shoot Logo'/>
     <Menu inverted={inverted}
           secondary={inverted}
-          style={{margin:0}}>
+          style={{margin: 0}}>
       <Menu.Item as={Link} to="/plants">Plants</Menu.Item>
       <Menu.Item as={Link} to="/about">About</Menu.Item>
       <Menu.Item as={Link} to="/contact">Contact</Menu.Item>

@@ -5,6 +5,7 @@ import './Landing.css';
 import Header from './Header';
 import Logo from './Logo';
 import {Button} from 'semantic-ui-react';
+import {Section} from './Styles';
 
 export default function Landing() {
   return <section className="page"
@@ -28,17 +29,15 @@ export default function Landing() {
         justifyContent: 'center',
         color: 'rgba(247, 255, 239, 0.89)',
       }}>
-        <div className='hero'
+        <Section className='hero'
              style={{
-               width: '100%',
-               maxWidth: 'var(--page-width)',
                position: 'relative',
                display: 'flex',
                alignItems: 'center',
              }}>
           <Header inverted hideLogo floating width="auto"/>
           <Logo color='white' height='20em'/>
-        </div>
+        </Section>
       </div>
     </Parallax>
 

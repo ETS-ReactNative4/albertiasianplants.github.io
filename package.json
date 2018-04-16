@@ -4,6 +4,7 @@
   "homepage": "http://albertiasianplants.com",
   "private": true,
   "dependencies": {
+    "radium": "^0.24.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-parallax": "^1.6.1",

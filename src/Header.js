@@ -5,33 +5,38 @@
 import logo from './wide logo bw.svg';
 import React from 'react';
 import PropTypes from 'prop-types';
-import {contentWidthRem} from './Styles';
 import MainMenu from './MainMenu';
+import Radium from 'radium';
 
-export default function Header() {
-  return <header style={
-    {
-      width: 'auto',
-      maxWidth: contentWidthRem + 'rem',
-      display: 'flex',
-      flexDirection: 'row',
-      flexAlign: 'center',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    }}>
+const contentWidth = 500;
+
+const LogoMenu = () =>
+  <div style={
+    [
+      {
+        display: "flex",
+        justifyContent: 'space-between',
+        flexFlow: 'row wrap',
+        alignItems: 'center',
+        [`@media (max-width: ${contentWidth}px)`]:{
+          flexDirection: 'column',
+        }
+      }
+    ]
+  }>
     <img src={logo}
-         style={{
-           height: '4rem',
-           margin: '2rem 0',
-         }}
-         alt='Alberti Asian Plants Bamboo Shoot Logo'/>
-    <MainMenu/>
-  </header>;
-}
+      style={{
+        height: '4rem',
+        margin: '1rem 0',
+      }}
+      alt='Alberti Asian Plants Bamboo Shoot Logo' />
+    <MainMenu margin='1rem 0' />
+  </div>;
 
-Header.propTypes = {
+LogoMenu.propTypes = {
   width: PropTypes.string,
   inverted: PropTypes.bool,
   hideLogo: PropTypes.bool,
 };
 
+export default Radium(LogoMenu);

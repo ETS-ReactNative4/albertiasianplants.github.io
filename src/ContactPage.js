@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import LogoMenu from './Header';
 import {Page, Section} from './Styles';
 import PropTypes from 'prop-types';
 
@@ -36,7 +36,7 @@ const Contact = ({name, title, phone, cellphone, email}) => <dl>
 </dl>;
 
 const ContactPage = () => <Page>
-  <Header/>
+  <LogoMenu/>
   <Section>
     <Contact name="Harald" title="CEO" email="harald@albertiasianplants.com"/>
   </Section>

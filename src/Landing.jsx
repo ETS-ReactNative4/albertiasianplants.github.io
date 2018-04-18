@@ -2,26 +2,50 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import heroBackground from './bamboo.jpg';
 import Logo from './Logo';
-import { pageWidthStyle } from './Styles';
+import { Page, pageWidthRem, subhead, pageWidthStyle, optimalTextWidthRem } from './Styles';
 import MainMenu from './MainMenu';
 import Radium from 'radium';
 
 const Button = ({ children }) =>
-  <button>
+  <button className='ui button'>
     {children}
   </button>
 
-const Landing = () =>
-  <section className="page"
-    style={{
+const Widget = Radium(({
+  iconSrc,
+  iconDescription,
+  title,
+  subtitle
+}) =>
+  <div style={{
+    margin: '2rem',
+    maxWidth: pageWidthRem / 3 - 4 + 'rem',
+    textAlign: 'center',
+  }}>
+    <img src={iconSrc} alt={iconDescription} style={{ height: "5rem" }} />
+    <h1 style={{margin: '1rem'}}>{title}</h1>
+    <p>
+      {subtitle}
+    </p>
+  </div>);
+
+const WidgetGroup = Radium((props) =>
+  <div style={
+    {
+      margin: '0 -2rem',
       display: 'flex',
-      flexDirection: 'column',
-      alignContent: 'center',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}>
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'stretch',
+      justifyContent: 'space-evenly'
+    }
+  }>
+    {props.children}
+  </div>
+);
 
-
+const Landing = () =>
+  <Page>
     <Parallax bgImage={heroBackground}
       strength={200}
       style={{ width: '100%' }}>
@@ -47,27 +71,45 @@ const Landing = () =>
             }
           }
         ]}>
-          <MainMenu inverted topRight margin='1rem 0 0 0' />
+          <MainMenu inverted subtle topRight margin='1rem 0 0 0' />
           <Logo color='white' height='20em' />
         </section>
       </div>
     </Parallax>
 
     <div style={{
-      padding: '2em 0',
-      maxWidth: 'var(--page-width)',
+      textAlign: 'center',
+      padding: '2rem 1rem',
+      maxWidth: optimalTextWidthRem * 1.5 + 'rem',
     }}>
       <h1>
-        Over 60 years of experience in the flower and plant trade
+        Deep roots.
       </h1>
-      <p style={{ width: '60%' }}>
-        We provide personal service to individuals and companies
-        looking to buy asian plants in bulk. Throw us an email
-        and we will get back to you within 48 hours.
+
+      <p style={subhead}>
+        Over 60 years of experience in the plant trade.
       </p>
+
       <Button>Get in touch</Button>
     </div>
+    
+    <WidgetGroup>
+    <Widget iconSrc='/icons/about.svg'
+    iconDescription='Bonsai on ship.'
+    title='About us'
+    subtitle='As an agent for some of asias top plant nurseries we provide personal service to individuals and companies
+    looking to buy asian plants in bulk.' />
+    
+    <Widget iconSrc='/icons/network.svg'
+        iconDescription='Three persons.'
+        title='Contact'
+        subtitle='We would love to hear from you. Throw us an email and we will get back to you within 48 hours.' />
 
-  </section>;
+    <Widget iconSrc='/icons/grass.svg'
+        iconDescription='A tuft of grass.'
+        title='Plants'
+        subtitle='A wide assortment of plants from top nurseries in Thailand and Sri Lanka.' />
+    </WidgetGroup>
+  </Page>;
 
 export default Radium(Landing);

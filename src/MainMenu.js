@@ -3,16 +3,14 @@ import Radium from 'radium';
 import { Link } from 'react-router-dom';
 
 const MenuItem = (props) =>
-  <Link to={props.to}>
-    <li style={{
-      padding: '1em',
-    }}>
+  <Link className='item' to={props.to}>
+    <li>
       {props.children}
     </li>
   </Link>
 
 const MainMenu = (props) =>
-  <ul {...props} style={[
+  <ul {...props} className={`ui ${props.inverted && 'inverted'} ${props.subtle && 'secondary'} menu`} style={[
     {
       padding: 0,
       margin: props.margin || 0,

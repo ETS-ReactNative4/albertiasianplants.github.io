@@ -15,3 +15,7 @@ body {
     background-color: var(--light-shade);
     font-family: sans-serif;
 }
+
+h1 {
+    text-align: center;
+}

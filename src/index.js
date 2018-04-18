@@ -5,6 +5,7 @@ import 'semantic-ui-css/semantic.min.css'
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { StyleRoot } from 'radium';
+import './index.css';
 
 ReactDOM.render(
   <StyleRoot>

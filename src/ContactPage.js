@@ -3,6 +3,7 @@ import { Page, Section } from './Styles';
 import PropTypes from 'prop-types';
 import Heading from './Heading';
 import Radium from 'radium';
+import { Parallax } from 'react-parallax';
 
 const gradientBackground = 'linear-gradient(to bottom, rgba(255,255,255,0.70), rgba(237,237,237,1))';
 const backdropFilter = 'blur(10px) saturate(200%)';
@@ -115,19 +116,25 @@ const Contact = Radium(({ name, title, phone, cellphone, email }) =>
 const ContactPage = () =>
   <Page>
     <Heading />
-    <Section>
-      <img src='/photos/harald-and-thomas.jpg' alt='Harald and Thomas in the greenhouse.' style={{ width: '100%' }} />
-      <div style={{
-        display: 'flex',
-        alignItems: 'top',
-        justifyContent: 'space-evenly',
-        flexWrap: 'wrap',
-        marginTop: '-5.9rem',
-      }}>
-        <Contact name="Harald Alberti" title="Senior" email="harald@albertiasianplants.com" phone="+46 (0) 8-604 090 54" cellphone="+46 (0) 70-814 75 21" />
-        <Contact name="Thomas Alberti" title="Assistant" email="thomas@albertiasianplants.com" />
-      </div>
-    </Section>
+    <Parallax bgImage='/photos/harald-and-thomas.jpg'
+      strength={200}
+      style={{ 
+        height: '50vw',
+        width: '100%',
+        zIndex: -1,
+        }}>
+      {/* <img src='/photos/harald-and-thomas.jpg' alt='Harald and Thomas in the greenhouse.' style={{ width: '100%' }} /> */}
+    </Parallax>
+    <div style={{
+      display: 'flex',
+      alignItems: 'top',
+      justifyContent: 'space-evenly',
+      flexWrap: 'wrap',
+      marginTop: '-5.9rem',
+    }}>
+      <Contact name="Harald Alberti" title="Senior" email="harald@albertiasianplants.com" phone="+46 (0) 8-604 090 54" cellphone="+46 (0) 70-814 75 21" />
+      <Contact name="Thomas Alberti" title="Assistant" email="thomas@albertiasianplants.com" />
+    </div>
   </Page>;
 
 export {

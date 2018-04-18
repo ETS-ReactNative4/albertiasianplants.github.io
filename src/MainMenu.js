@@ -1,7 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
 import { Link } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react';
 
 const MenuItem = (props) =>
   <Link to={props.to}>

@@ -1,10 +1,10 @@
 import React from 'react';
-import LogoMenu from './Header';
-import {Page, Section, pageWidthStyle} from './Styles';
+import {Page, Section} from './Styles';
+import Heading from './Heading';
 
 const About = () =>
   <Page>
-    <heading style={pageWidthStyle}><LogoMenu/></heading>
+    <Heading/>
     <Section>
       <h2>Back in action!</h2>
 

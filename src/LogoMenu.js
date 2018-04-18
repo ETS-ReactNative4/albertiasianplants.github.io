@@ -7,6 +7,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MainMenu from './MainMenu';
 import Radium from 'radium';
+import {Link} from 'react-router-dom';
 
 const contentWidth = 500;
 
@@ -18,18 +19,20 @@ const LogoMenu = () =>
         justifyContent: 'space-between',
         flexFlow: 'row wrap',
         alignItems: 'center',
-        [`@media (max-width: ${contentWidth}px)`]:{
+        [`@media (max-width: ${contentWidth}px)`]: {
           flexDirection: 'column',
         }
       }
     ]
   }>
-    <img src={logo}
-      style={{
-        height: '4rem',
-        margin: '1rem 0',
-      }}
-      alt='Alberti Asian Plants Bamboo Shoot Logo' />
+    <Link to="/">
+      <img src={logo}
+        style={{
+          height: '4rem',
+          margin: '1rem 0',
+        }}
+        alt='Alberti Asian Plants Bamboo Shoot Logo' />
+    </Link>
     <MainMenu margin='1rem 0' />
   </div>;
 

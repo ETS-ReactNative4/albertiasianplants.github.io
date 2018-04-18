@@ -1,16 +1,18 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import heroBackground from './bamboo.jpg';
-import './Landing.css';
-import LogoMenu from './Header';
 import Logo from './Logo';
-import { Button } from 'semantic-ui-react';
 import { pageWidthStyle } from './Styles';
 import MainMenu from './MainMenu';
 import Radium from 'radium';
 
-export default Radium(function Landing() {
-  return <section className="page"
+const Button = ({ children }) =>
+  <button>
+    {children}
+  </button>
+
+const Landing = () =>
+  <section className="page"
     style={{
       display: 'flex',
       flexDirection: 'column',
@@ -38,7 +40,7 @@ export default Radium(function Landing() {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            
+
             minHeight: '40rem',
             '@media screen and (max-height: 80rem)': {
               minHeight: '50vh',
@@ -67,4 +69,5 @@ export default Radium(function Landing() {
     </div>
 
   </section>;
-});
+
+export default Radium(Landing);

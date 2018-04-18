@@ -3,8 +3,12 @@
  */
 
 import React from "react";
+import Heading from "./Heading";
+import { Page } from './Styles';
 
-export default function Plants() {
-  return <h1>Plants</h1>
-  
-}
+const Plants = () =>
+  <Page>
+    <Heading />
+  </Page>
+
+export default Plants

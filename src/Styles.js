@@ -31,9 +31,20 @@ export const darkLusterColor = 'rgba(0,0,0,0.85)';
 export const borderRadius = '1rem';
 export const borderRadiusInner = '0.5rem';
 
+export const shadow = { boxShadow: '0 0.15rem 0.75rem rgba(150,150,150,0.7)' };
+export const hoverShadow = {
+  transition: 'box-shadow 1s', 
+  ':hover': {
+    // transform: 'scale(1.05)',
+    boxShadow: '0 0.30rem 1.5rem rgba(150,150,150,0.7)',
+  },
+};
 export const Page = Radium((props) =>
   <div {...props} style={pageStyle}>
     {props.children}
+    <footer>
+
+    </footer>
   </div>);
 
 export const Section = Radium((props) =>
@@ -63,16 +74,16 @@ export const blurredGlass = [
 ];
 
 export const WidgetGroup = Radium((props) =>
-<div style={
-  {
-    margin: '0 ' + ('-' + props.widgetMargin) || '-2rem',
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'stretch',
-    justifyContent: 'space-evenly'
-  }
-}>
-  {props.children}
-</div>
+  <div style={
+    {
+      margin: '0 ' + ('-' + props.widgetMargin) || '-2rem',
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'stretch',
+      justifyContent: 'space-evenly'
+    }
+  }>
+    {props.children}
+  </div>
 );

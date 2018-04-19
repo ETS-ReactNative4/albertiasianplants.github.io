@@ -8,6 +8,8 @@ import {
   borderRadius,
   borderRadiusInner,
   blurredGlass,
+  shadow,
+  hoverShadow,
 } from './Styles';
 import PropTypes from 'prop-types';
 import Heading from './Heading';
@@ -74,12 +76,9 @@ const Contact = Radium(({ name, title, phone, cellphone, email }) =>
       margin: '0 2rem 2rem 2rem',
       borderRadius: borderRadius,
       background: 'rgba(220,220,220,0.80)',
-      boxShadow: '0 0.15rem 0.75rem rgba(150,150,150,0.7)',
-      ':hover': {
-        // transform: 'scale(1.05)',
-        boxShadow: '0 0.30rem 1.5rem rgba(150,150,150,0.7)',
-      },
     },
+    shadow,
+    hoverShadow,
     blurredGlass
   ]}>
     <dt style={{ display: 'none' }}>Name</dt>

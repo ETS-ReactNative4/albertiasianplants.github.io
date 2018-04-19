@@ -11,8 +11,8 @@ import * as styles from './Styles';
 
 const PlantImage = Radium(({name, filename}) =>
   <div style={{
-    width: pageWidthRem / 3 - 2 + 'rem',
-    height: pageWidthRem / 3 - 2 + 'rem',
+    width: (pageWidthRem - 4) / 3 + 'rem',
+    height: (pageWidthRem - 4) / 3 + 'rem',
     background: `url('${'/photos/plants/' + filename}') no-repeat center center`,
     backgroundSize: 'cover',
     display: 'flex',
@@ -38,7 +38,7 @@ const Plants = () =>
       <h1>Plants.</h1>
       <h2 style={subhead}>Examples from our assortment.</h2>
       <p>This is far from all of our plants. Feel free to ask us for anything you are unable to find here.</p>
-      <styles.WidgetGroup>
+      <styles.WidgetGroup widgetMargin='1rem'>
       {PlantPhotos.plants.map(({name, filename}) => <PlantImage name={name} filename={filename} />)}
       </styles.WidgetGroup>
     </Section>

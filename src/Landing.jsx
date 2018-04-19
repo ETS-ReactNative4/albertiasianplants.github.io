@@ -2,34 +2,46 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import heroBackground from './bamboo.jpg';
 import Logo from './Logo';
-import { WidgetGroup, Page, pageWidthRem, subhead, pageWidthStyle, optimalTextWidthRem } from './Styles';
+import { WidgetGroup, Page, pageWidthRem, subhead, pageWidthStyle, optimalTextWidthRem, borderRadius, hoverShadow } from './Styles';
 import MainMenu from './MainMenu';
 import Radium from 'radium';
+import {Link, withRouter} from 'react-router-dom';
 
 const Button = ({ children }) =>
   <button className='ui button'>
     {children}
   </button>
 
-const Widget = Radium(({
+const Widget = withRouter(Radium(({
+  history,
   iconSrc,
   iconDescription,
   title,
-  subtitle
-}) =>
-  <div style={{
-    margin: '2rem',
-    maxWidth: pageWidthRem / 3 - 4 + 'rem',
+  subtitle,
+  link
+}) => {
+const widgetMarginRem = 0.5
+const widgetsPerRow = 3;
+return <div style={[
+  {
+    margin: widgetMarginRem + 'rem',
+    padding: '1.5rem',
+    maxWidth: (pageWidthRem - widgetMarginRem * (widgetsPerRow-1) * 2 ) / 3 + 'rem',
     textAlign: 'center',
-  }}>
+    cursor: 'pointer',
+    borderRadius: borderRadius,
+  },
+  hoverShadow
+]}
+  onClick={() => history.push(link)}>
     <img src={iconSrc} alt={iconDescription} style={{ height: "5rem" }} />
-    <h1 style={{margin: '1rem'}}>{title}</h1>
+    <h1 style={{ margin: '1rem' }}>{title}</h1>
     <p>
       {subtitle}
     </p>
-  </div>);
+</div>}));
 
-const Landing = () =>
+const Landing = (_, context) =>
   <Page>
     <Parallax bgImage={heroBackground}
       strength={200}
@@ -49,6 +61,8 @@ const Landing = () =>
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
+            padding: '5rem',
+
 
             minHeight: '40rem',
             '@media screen and (max-height: 80rem)': {
@@ -75,25 +89,28 @@ const Landing = () =>
         Over 60 years of experience in the plant trade.
       </p>
 
-      <Button>Get in touch</Button>
+      <Link to='/contact'><Button>Get in touch</Button></Link>
     </div>
     
     <WidgetGroup>
     <Widget iconSrc='/icons/about.svg'
     iconDescription='Bonsai on ship.'
     title='About us'
-    subtitle='As an agent for some of asias top plant nurseries we provide personal service to individuals and companies
-    looking to buy asian plants in bulk.' />
+    subtitle="As an agent for some of Asia's top plant nurseries we provide personal service to individuals and companies
+    looking to buy asian plants in bulk."
+    link='/about' />
     
     <Widget iconSrc='/icons/network.svg'
         iconDescription='Three persons.'
         title='Contact'
-        subtitle='We would love to hear from you. Throw us an email and we will get back to you within 48 hours.' />
+        subtitle='We would love to hear from you. Throw us an email and we will get back to you within 48 hours.'
+        link='/contact' />
 
     <Widget iconSrc='/icons/grass.svg'
         iconDescription='A tuft of grass.'
         title='Plants'
-        subtitle='A wide assortment of plants from top nurseries in Thailand and Sri Lanka.' />
+        subtitle='A wide assortment of plants from top nurseries in Thailand and Sri Lanka.'
+        link='/plants' />
     </WidgetGroup>
   </Page>;
 

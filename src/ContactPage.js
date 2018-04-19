@@ -1,15 +1,21 @@
 import React from 'react';
-import { Page, Section } from './Styles';
+import {
+  Page, 
+  Section, 
+  gradientBackground,
+  backdropFilter,
+  darkLusterColor,
+  borderRadius,
+  borderRadiusInner,
+  blurredGlass,
+} from './Styles';
 import PropTypes from 'prop-types';
 import Heading from './Heading';
 import Radium from 'radium';
 import { Parallax } from 'react-parallax';
 
-const gradientBackground = 'linear-gradient(to bottom, rgba(255,255,255,0.70), rgba(237,237,237,1))';
-const backdropFilter = 'blur(10px) saturate(200%)';
-const darkLusterColor = 'rgba(0,0,0,0.85)';
-const borderRadius = '1rem';
-const borderRadiusInner = '0.5rem';
+
+
 const buttonStyle = {
   transition: 'all 0.5s',
   margin: 0,
@@ -74,17 +80,7 @@ const Contact = Radium(({ name, title, phone, cellphone, email }) =>
         boxShadow: '0 0.30rem 1.5rem rgba(150,150,150,0.7)',
       },
     },
-    CSS.supports('background', gradientBackground) && {
-      background: 'linear-gradient(to bottom, rgba(255,255,255,0.80), rgba(237,237,237,1))',
-    },
-    (
-      CSS.supports('backdrop-filter', backdropFilter) ||
-      CSS.supports('-webkit-backdrop-filter', backdropFilter)
-    ) && {
-      '-webkit-backdrop-filter': backdropFilter,
-      backdropFilter: backdropFilter,
-      background: 'linear-gradient(to bottom, rgba(255,255,255,0.50), rgba(237,237,237,1))',
-    }
+    blurredGlass
   ]}>
     <dt style={{ display: 'none' }}>Name</dt>
     <dd style={{
@@ -118,11 +114,11 @@ const ContactPage = () =>
     <Heading />
     <Parallax bgImage='/photos/harald-and-thomas.jpg'
       strength={200}
-      style={{ 
+      style={{
         height: '50vw',
         width: '100%',
         zIndex: -1,
-        }}>
+      }}>
       {/* <img src='/photos/harald-and-thomas.jpg' alt='Harald and Thomas in the greenhouse.' style={{ width: '100%' }} /> */}
     </Parallax>
     <div style={{

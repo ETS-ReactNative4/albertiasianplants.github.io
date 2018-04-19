@@ -6617,6 +6617,10 @@ string-length@^1.0.1:
   dependencies:
     strip-ansi "^3.0.0"
 
+string-title-case@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/string-title-case/-/string-title-case-3.0.0.tgz#ffc355e03b833599c267c9e97a3c0c1820a90732"
+
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"

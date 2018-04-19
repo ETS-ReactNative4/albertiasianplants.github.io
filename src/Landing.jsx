@@ -2,7 +2,7 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import heroBackground from './bamboo.jpg';
 import Logo from './Logo';
-import { Page, pageWidthRem, subhead, pageWidthStyle, optimalTextWidthRem } from './Styles';
+import { WidgetGroup, Page, pageWidthRem, subhead, pageWidthStyle, optimalTextWidthRem } from './Styles';
 import MainMenu from './MainMenu';
 import Radium from 'radium';
 
@@ -28,21 +28,6 @@ const Widget = Radium(({
       {subtitle}
     </p>
   </div>);
-
-const WidgetGroup = Radium((props) =>
-  <div style={
-    {
-      margin: '0 -2rem',
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      alignItems: 'stretch',
-      justifyContent: 'space-evenly'
-    }
-  }>
-    {props.children}
-  </div>
-);
 
 const Landing = () =>
   <Page>

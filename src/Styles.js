@@ -1,13 +1,13 @@
 import Radium from 'radium';
 import React from 'react';
 
-const optimalTextWidthRem = 30;
-const pageMarginRem = 3;
-const pageWidthRem = optimalTextWidthRem * 2;
-const pageWidth = pageWidthRem + "rem";
-const narrowScreenMedia = '@media (max-width:' + pageWidth + ')'
+export const optimalTextWidthRem = 30;
+export const pageMarginRem = 3;
+export const pageWidthRem = optimalTextWidthRem * 2;
+export const pageWidth = pageWidthRem + "rem";
+export const narrowScreenMedia = '@media (max-width:' + pageWidth + ')'
 
-const pageWidthStyle = {
+export const pageWidthStyle = {
   width: pageWidth,
   margin: '0 ' + pageMarginRem + 'rem',
   [narrowScreenMedia]: {
@@ -15,22 +15,28 @@ const pageWidthStyle = {
   }
 };
 
-const pageStyle = {
+export const pageStyle = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
 };
 
-const sectionStyle = {
+export const sectionStyle = {
   textAlign: "center",
 }
 
-const Page = Radium((props) =>
+export const gradientBackground = 'linear-gradient(to bottom, rgba(255,255,255,0.70), rgba(237,237,237,1))';
+export const backdropFilter = 'blur(10px) saturate(200%)';
+export const darkLusterColor = 'rgba(0,0,0,0.85)';
+export const borderRadius = '1rem';
+export const borderRadiusInner = '0.5rem';
+
+export const Page = Radium((props) =>
   <div {...props} style={pageStyle}>
     {props.children}
   </div>);
 
-const Section = Radium((props) =>
+export const Section = Radium((props) =>
   <section {...props} style={[
     pageWidthStyle,
     sectionStyle,
@@ -38,16 +44,35 @@ const Section = Radium((props) =>
     {props.children}
   </section>)
 
-const subhead = {
+export const subhead = {
   fontSize: '1.3rem',
 }
 
-export {
-  pageWidthStyle,
-  Page,
-  Section,
-  optimalTextWidthRem,
-  pageWidth,
-  pageWidthRem,
-  subhead,
-};
+export const blurredGlass = [
+  CSS.supports('background', gradientBackground) && {
+    background: 'linear-gradient(to bottom, rgba(255,255,255,0.80), rgba(237,237,237,1))',
+  },
+  (
+    CSS.supports('backdrop-filter', backdropFilter) ||
+    CSS.supports('-webkit-backdrop-filter', backdropFilter)
+  ) && {
+    '-webkit-backdrop-filter': backdropFilter,
+    backdropFilter: backdropFilter,
+    background: 'linear-gradient(to bottom, rgba(255,255,255,0.50), rgba(237,237,237,1))',
+  }
+];
+
+export const WidgetGroup = Radium((props) =>
+<div style={
+  {
+    margin: '0 ' + ('-' + props.widgetMargin) || '-2rem',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'stretch',
+    justifyContent: 'space-evenly'
+  }
+}>
+  {props.children}
+</div>
+);

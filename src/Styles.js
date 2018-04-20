@@ -1,5 +1,7 @@
 import Radium from 'radium';
 import React from 'react';
+import Logo from './Logo';
+import { darkBackground } from './Colors';
 
 export const optimalTextWidthRem = 30;
 export const pageMarginRem = 3;
@@ -42,9 +44,6 @@ export const hoverShadow = {
 export const Page = Radium((props) =>
   <div {...props} style={pageStyle}>
     {props.children}
-    <footer>
-
-    </footer>
   </div>);
 
 export const Section = Radium((props) =>

@@ -71,7 +71,7 @@ const Landing = (_, context) =>
           }
         ]}>
           <MainMenu inverted subtle topRight margin='1rem 0 0 0' />
-          <Logo color='white' height='20em' />
+          <Logo color='white' style={{height:'20em'}} />
         </section>
       </div>
     </Parallax>

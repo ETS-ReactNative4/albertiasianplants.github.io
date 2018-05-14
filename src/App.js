@@ -22,6 +22,7 @@ class App extends Component {
           marginTop: '3rem',
           padding: '3rem',
           backgroundColor: darkBackground,
+          textAlign: 'center',
         }}>
           <Logo color='white' noText style={{
             height: '6rem'

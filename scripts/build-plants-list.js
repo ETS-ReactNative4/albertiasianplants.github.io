@@ -14,10 +14,12 @@ function removeNumbering(filename) {
 
 fs.readdirSync(plantsFolder).forEach(filename => {
     const plantName = removeNumbering(titleCase(removeFiletype(filename), ['of', 'for', 'the', 'in', 'is']));
-    plants.push({
-        name: plantName,
-        filename: filename,
-    });
+    if (!filename.startsWith('.')) {
+        plants.push({
+            name: plantName,
+            filename: filename,
+        });
+    };
 });
 
 const json = JSON.stringify({plants: plants});

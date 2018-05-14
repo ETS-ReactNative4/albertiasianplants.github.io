@@ -128,7 +128,7 @@ const ContactPage = () =>
       marginTop: '-5.9rem',
     }}>
       <Contact name="Harald Alberti" title="Senior" email="harald@albertiasianplants.com" phone="+46 (0) 8-604 090 54" cellphone="+46 (0) 70-814 75 21" />
-      <Contact name="Thomas Alberti" title="Assistant" email="thomas@albertiasianplants.com" />
+      <Contact name="Thomas Alberti" title="Assistant" email="thomas@albertiasianplants.com" phone="+46 (0) 70-729 46 42" />
     </div>
   </Page>;
 

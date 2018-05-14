@@ -97,7 +97,7 @@ const Landing = (_, context) =>
     iconDescription='Bonsai on ship.'
     title='About us'
     subtitle="As an agent for some of Asia's top plant nurseries we provide personal service to individuals and companies
-    looking to buy asian plants in bulk."
+    looking to buy asian plants."
     link='/about' />
     
     <Widget iconSrc='/icons/network.svg'

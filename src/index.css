@@ -13,7 +13,7 @@ body {
     padding: 0;
     color: var(--text-color);
     background-color: var(--light-shade);
-    font-family: sans-serif;
+    font-family: Avenir, sans-serif;
 }
 
 h1 {
